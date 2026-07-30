@@ -4,7 +4,7 @@ defaultTargets = ["HexMvPoly"]
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "f1580d28c2e9ff9e8d4d7cdef9dccbaa17780b03"
+rev = "5354a7153ade8a60effaf6431bda7af22cc3410f"
 
 [[require]]
 name = "HexPoly"
