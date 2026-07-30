@@ -18,6 +18,16 @@ rev = "edadb24574148105a354f737d59a367a4acbf51d"
 
 [[lean_lib]]
 name = "HexMvPoly"
+globs = [
+  "HexMvPoly",
+  "HexMvPoly.Mono",
+  "HexMvPoly.Basic",
+  "HexMvPoly.Operations",
+  "HexMvPoly.Query",
+  "HexMvPoly.Eval",
+  "HexMvPoly.Structural",
+  "HexMvPoly.Recursive",
+]
 
 [[lean_lib]]
 name = "HexMvPolyTests"
