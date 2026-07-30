@@ -9,7 +9,7 @@ rev = "5354a7153ade8a60effaf6431bda7af22cc3410f"
 [[require]]
 name = "HexPoly"
 git = "https://github.com/leanprover/hex-poly.git"
-rev = "6dcec6053c715ffd47c95e5224692bead4f878db"
+rev = "edadb24574148105a354f737d59a367a4acbf51d"
 
 [[lean_lib]]
 name = "HexMvPoly"
