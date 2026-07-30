@@ -1,0 +1,19 @@
+name = "hex-mv-poly"
+defaultTargets = ["HexMvPoly"]
+
+[[require]]
+name = "HexBasic"
+git = "https://github.com/leanprover/hex-basic.git"
+rev = "f1580d28c2e9ff9e8d4d7cdef9dccbaa17780b03"
+
+[[require]]
+name = "HexPoly"
+git = "https://github.com/leanprover/hex-poly.git"
+rev = "6dcec6053c715ffd47c95e5224692bead4f878db"
+
+[[lean_lib]]
+name = "HexMvPoly"
+
+[[lean_lib]]
+name = "HexMvPolyTests"
+globs = ["HexMvPoly.KernelTests"]

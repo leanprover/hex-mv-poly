@@ -1,0 +1,19 @@
+name = "hex-mv-poly-conformance"
+defaultTargets = ["HexMvPolyConformance"]
+
+[[require]]
+name = "HexMvPoly"
+path = ".."
+
+[[require]]
+name = "hex-test-kit"
+git = "https://github.com/leanprover/hex-test-kit.git"
+rev = "610207eec0ca214928eec42a6dd2084d859bf94d"
+
+[[lean_lib]]
+name = "HexMvPolyConformance"
+globs = ["HexMvPoly.Fixtures", "HexMvPoly.Conformance"]
+
+[[lean_exe]]
+name = "hexmvpoly_emit_fixtures"
+root = "HexMvPoly.EmitFixtures"

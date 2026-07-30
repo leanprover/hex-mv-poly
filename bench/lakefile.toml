@@ -1,0 +1,15 @@
+name = "hex-mv-poly-bench"
+defaultTargets = ["hexmvpoly_bench"]
+
+[[require]]
+name = "HexMvPoly"
+path = ".."
+
+[[require]]
+name = "lean-bench"
+git = "https://github.com/kim-em/lean-bench.git"
+rev = "fa30c2763cf523f3ac8e46dc3a1dad0845a40098"
+
+[[lean_exe]]
+name = "hexmvpoly_bench"
+root = "HexMvPoly.Bench"
