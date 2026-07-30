@@ -1,6 +1,11 @@
 name = "hex-mv-poly-conformance"
 defaultTargets = ["HexMvPolyConformance"]
 
+leanOptions = [
+  { name = "doc.verso", value = true },
+  { name = "doc.verso.suggestions", value = false },
+]
+
 [[require]]
 name = "HexMvPoly"
 path = ".."
