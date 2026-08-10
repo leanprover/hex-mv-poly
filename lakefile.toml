@@ -14,7 +14,7 @@ rev = "365881fb205210e8d27c5eb011f7ddb3fe020373"
 [[require]]
 name = "HexPoly"
 git = "https://github.com/leanprover/hex-poly.git"
-rev = "6ca185f18509461bdec244ce3bb8d33eb6e24705"
+rev = "104a2b0c00eedf0ecab222c1a977dd53dbaa9bb3"
 
 [[lean_lib]]
 name = "HexMvPoly"
