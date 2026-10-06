@@ -87,6 +87,32 @@ def rename {k : Nat} (f : Fin n → Fin k) (m : Mono n) : Mono k :=
     (List.finRange n).foldl
       (fun acc i => acc + if f i = j then m[i] else 0) 0
 
+/-- Scatter exponents in one source-coordinate pass. -/
+def renameFast {k : Nat} (f : Fin n → Fin k) (m : Mono n) : Mono k :=
+  (List.finRange n).foldl
+    (fun acc i => acc.set (f i) (acc[f i] + m[i])) (Vector.replicate k 0)
+
+private theorem renameFold {k : Nat} (f : Fin n → Fin k) (m : Mono n)
+    (xs : List (Fin n)) (a : Mono k) (j : Fin k) :
+    (xs.foldl (fun acc i => acc.set (f i) (acc[f i] + m[i])) a)[j] =
+      xs.foldl (fun acc i => acc + if f i = j then m[i] else 0) a[j] := by
+  induction xs generalizing a with
+  | nil => rfl
+  | cons i xs ih =>
+    simp only [List.foldl_cons, ih]
+    congr 1
+    by_cases h : f i = j
+    · simp [h]
+    · have hv : (f i).val ≠ j.val := fun he => h (Fin.ext he)
+      simp [h, hv]
+
+@[csimp] theorem rename_eq_fast : @rename = @renameFast := by
+  funext n k f m
+  apply Vector.ext
+  intro j hj
+  simp only [rename, Hex.Vector.getElem_ofFn', renameFast]
+  simpa using (renameFold f m (List.finRange n) (Vector.replicate k 0) ⟨j, hj⟩).symm
+
 /-- Increase the exponent of variable `i` by one. -/
 def succAt (i : Fin n) (m : Mono n) : Mono n :=
   mul m (unit i)

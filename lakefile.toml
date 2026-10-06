@@ -9,26 +9,21 @@ leanOptions = [
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "v0.6.0"
+rev = "v0.7.0"
 
 [[require]]
 name = "HexPoly"
 git = "https://github.com/leanprover/hex-poly.git"
-rev = "v0.6.0"
+rev = "v0.7.0"
+
+[[require]]
+name = "HexModArith"
+git = "https://github.com/leanprover/hex-mod-arith.git"
+rev = "v0.7.0"
 
 [[lean_lib]]
 name = "HexMvPoly"
-globs = [
-  "HexMvPoly",
-  "HexMvPoly.Mono",
-  "HexMvPoly.Basic",
-  "HexMvPoly.Operations",
-  "HexMvPoly.Query",
-  "HexMvPoly.Eval",
-  "HexMvPoly.Structural",
-  "HexMvPoly.Recursive",
-]
 
 [[lean_lib]]
 name = "HexMvPolyTests"
-globs = ["HexMvPoly.KernelTests"]
+globs = ["HexMvPoly.KernelTests", "HexMvPoly.KernelResidueTests"]
